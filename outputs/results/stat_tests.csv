@@ -1,0 +1,13 @@
+Feature,Test,Statistic,p-value,Effect Size,Significant
+age,Mann-Whitney U,U=200262,3.85e-71,r_rb=0.669,Yes
+avg_glucose_level,Mann-Whitney U,U=471082,3.58e-09,r_rb=0.221,Yes
+bmi,Mann-Whitney U,U=413263,1.04e-04,r_rb=0.158,Yes
+gender,Chi-squared,χ²=0.34,5.60e-01,"V=0.008, OR=1.09 [0.84–1.41]",No
+hypertension,Chi-squared,χ²=81.57,1.69e-19,"V=0.126, OR=3.70 [2.74–4.98]",Yes
+heart_disease,Chi-squared,χ²=90.23,2.12e-21,"V=0.133, OR=4.71 [3.34–6.64]",Yes
+ever_married,Chi-squared,χ²=58.87,1.69e-14,"V=0.107, OR=4.18 [2.83–6.19]",Yes
+work_type,Chi-squared,χ²=49.16,5.41e-10,V=0.098,Yes
+Residence_type,Chi-squared,χ²=1.07,3.00e-01,"V=0.015, OR=1.15 [0.89–1.49]",No
+smoking_status,Chi-squared,χ²=29.23,2.01e-06,V=0.076,Yes
+bmi_missing (indicator),Chi-squared,χ²=98.56,3.16e-23,"V=0.139, stroke rate: 4.3% vs 19.9%",Yes
+smoking_unknown (indicator),Chi-squared,χ²=15.42,8.62e-05,"V=0.055, stroke rate: 5.7% vs 3.0%",Yes
