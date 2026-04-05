@@ -1,0 +1,6 @@
+Experiment,Threshold,F1,Recall,Precision,AUC-PR
+Baseline,0.500 (default),0.0392,0.0200,1.0000,0.2627
+Class Weight,0.500 (default),0.2446,0.8000,0.1444,0.2608
+SMOTE,0.500 (default),0.2393,0.7800,0.1413,0.2665
+ADASYN,0.500 (default),0.2364,0.7800,0.1393,0.2653
+Exp-2: SMOTE + Threshold,0.810 (optimized),0.3444,0.5200,0.2574,0.2665
