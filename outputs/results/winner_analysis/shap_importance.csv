@@ -1,0 +1,23 @@
+feature,mean_shap
+age,0.5623
+avg_glucose_level,0.0870
+bmi,0.0636
+bmi_missing,0.0521
+hypertension,0.0510
+ever_married_No,0.0311
+heart_disease,0.0208
+ever_married_Yes,0.0191
+work_type_children,0.0153
+smoking_status_smokes,0.0135
+smoking_status_never smoked,0.0133
+smoking_status_formerly smoked,0.0107
+Residence_type_Rural,0.0056
+work_type_Self-employed,0.0051
+smoking_status_Unknown,0.0037
+work_type_Private,0.0026
+gender_Female,0.0017
+work_type_Govt_job,0.0013
+Residence_type_Urban,0.0012
+gender_Male,0.0006
+gender_Other,0.0000
+work_type_Never_worked,0.0000
