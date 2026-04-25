@@ -432,11 +432,14 @@ for case_name, case_idx in cases:
         instance,
         fitted_model.predict_proba,
         num_features=10,
-        top_labels=1,
+        labels=[1],
     )
     
+    # Get the label key that LIME actually produced
+    lime_label = 1 if 1 in exp.local_exp else list(exp.local_exp.keys())[0]
+    
     # Save LIME explanation as figure
-    fig = exp.as_pyplot_figure(label=1)
+    fig = exp.as_pyplot_figure(label=lime_label)
     fig.set_size_inches(10, 6)
     safe_name = case_name.lower().replace(" ", "_").replace("(", "").replace(")", "")
     plt.title(f"LIME — {case_name}\n"
@@ -448,7 +451,7 @@ for case_name, case_idx in cases:
     plt.close()
     
     # Collect explanation features
-    for feat, weight in exp.as_list(label=1):
+    for feat, weight in exp.as_list(label=lime_label):
         lime_records.append({
             "Case": case_name,
             "Index": case_idx,

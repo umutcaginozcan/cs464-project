@@ -1,0 +1,41 @@
+Case,Index,P(Stroke),True Label,Feature Condition,Weight
+True Positive (highest conf),231,0.9582,1,age > 0.78,0.5582
+True Positive (highest conf),231,0.9582,1,hypertension > 0.00,0.0564
+True Positive (highest conf),231,0.9582,1,work_type_Self-employed <= 0.00,0.0424
+True Positive (highest conf),231,0.9582,1,heart_disease > 0.00,0.0402
+True Positive (highest conf),231,0.9582,1,avg_glucose_level > 0.17,0.0402
+True Positive (highest conf),231,0.9582,1,work_type_children <= 0.00,-0.0361
+True Positive (highest conf),231,0.9582,1,smoking_status_smokes > 0.00,0.0274
+True Positive (highest conf),231,0.9582,1,smoking_status_never smoked <= 0.00,0.0189
+True Positive (highest conf),231,0.9582,1,0.00 < work_type_Private <= 1.00,0.0184
+True Positive (highest conf),231,0.9582,1,0.00 < ever_married_Yes <= 1.00,-0.0170
+False Negative (missed stroke),135,0.1650,1,-0.77 < age <= 0.07,-0.2389
+False Negative (missed stroke),135,0.1650,1,gender_Other <= 0.00,-0.0870
+False Negative (missed stroke),135,0.1650,1,work_type_Never_worked <= 0.00,-0.0861
+False Negative (missed stroke),135,0.1650,1,hypertension <= 0.00,-0.0516
+False Negative (missed stroke),135,0.1650,1,heart_disease <= 0.00,-0.0507
+False Negative (missed stroke),135,0.1650,1,work_type_children <= 0.00,-0.0453
+False Negative (missed stroke),135,0.1650,1,0.00 < work_type_Private <= 1.00,0.0376
+False Negative (missed stroke),135,0.1650,1,work_type_Self-employed <= 0.00,0.0363
+False Negative (missed stroke),135,0.1650,1,smoking_status_smokes <= 0.00,-0.0340
+False Negative (missed stroke),135,0.1650,1,-0.65 < bmi <= -0.11,-0.0272
+False Positive (false alarm),0,0.5580,0,age > 0.78,0.5487
+False Positive (false alarm),0,0.5580,0,hypertension <= 0.00,-0.0486
+False Positive (false alarm),0,0.5580,0,work_type_Self-employed <= 0.00,0.0398
+False Positive (false alarm),0,0.5580,0,smoking_status_smokes <= 0.00,-0.0326
+False Positive (false alarm),0,0.5580,0,bmi > 0.50,-0.0277
+False Positive (false alarm),0,0.5580,0,0.00 < smoking_status_never smoked <= 1.00,-0.0251
+False Positive (false alarm),0,0.5580,0,work_type_children <= 0.00,-0.0246
+False Positive (false alarm),0,0.5580,0,work_type_Never_worked <= 0.00,0.0223
+False Positive (false alarm),0,0.5580,0,smoking_status_formerly smoked <= 0.00,0.0216
+False Positive (false alarm),0,0.5580,0,heart_disease <= 0.00,-0.0213
+True Negative (most confident),960,0.0124,0,age <= -0.77,-0.4167
+True Negative (most confident),960,0.0124,0,gender_Other <= 0.00,0.0781
+True Negative (most confident),960,0.0124,0,hypertension <= 0.00,-0.0495
+True Negative (most confident),960,0.0124,0,work_type_Self-employed <= 0.00,0.0492
+True Negative (most confident),960,0.0124,0,avg_glucose_level <= -0.64,-0.0351
+True Negative (most confident),960,0.0124,0,smoking_status_smokes <= 0.00,-0.0333
+True Negative (most confident),960,0.0124,0,smoking_status_formerly smoked <= 0.00,0.0283
+True Negative (most confident),960,0.0124,0,work_type_Never_worked <= 0.00,-0.0263
+True Negative (most confident),960,0.0124,0,heart_disease <= 0.00,-0.0252
+True Negative (most confident),960,0.0124,0,work_type_children > 0.00,0.0227
