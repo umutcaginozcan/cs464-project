@@ -1,6 +1,6 @@
 % ============================================================
 %  CS 464 Final Project Report — Group 24
-%  Cost-Sensitive and Interpretable Stroke Risk Prediction
+%  Interpretable Stroke Risk Prediction
 % ============================================================
 \documentclass[11pt,a4paper]{article}
 
@@ -41,7 +41,7 @@
 \usepackage{fancyhdr}
 \fancypagestyle{main}{%
   \fancyhf{}
-  \fancyhead[L]{\small\itshape Stroke Risk Prediction on Tabular Clinical Data}
+  \fancyhead[L]{\small\itshape Interpretable Stroke Risk Prediction on Tabular Clinical Data}
   \fancyhead[R]{\small\thepage}
   \renewcommand{\headrulewidth}{0.4pt}
   \renewcommand{\footrulewidth}{0pt}
@@ -91,7 +91,7 @@
   \vspace{1.2cm}
   \rule{\linewidth}{1.5pt}\vspace{0.4cm}
   {\LARGE\bfseries\color{headingblue}
-    Cost-Sensitive and Interpretable\\ Stroke Risk Prediction\\
+    Interpretable Stroke Risk Prediction\\
     on Tabular Clinical Data\par}
   \vspace{0.4cm}\rule{\linewidth}{1.5pt}
   \vspace{1.5cm}
@@ -288,9 +288,20 @@ Two features have missing values:
 
 \subsubsection{Train / Test Split}
 
-The dataset is divided into an 80\% training set and a 20\% held-out test set using \emph{stratified} random sampling (random seed 42) to preserve the class ratio in both splits.
+The dataset is divided into an 80\% training set and a 20\% held-out test set using \emph{stratified} random sampling to preserve the class ratio in both splits.
 This yields approximately 4{,}088 training samples (200 positive) and 1{,}022 test samples (49 positive).
 All preprocessing is fitted exclusively on the training set to prevent data leakage.
+
+\paragraph{Reproducibility and seeds.}
+A global seed \texttt{SEED\,=\,42} (defined in \texttt{code/shared.py}) is applied uniformly: it is passed as \texttt{random\_state=42} to \texttt{train\_test\_split}, \texttt{StratifiedKFold}, all scikit-learn model constructors, and all resampling objects.
+For the PyTorch MLP the seed block below is executed before each training run:
+{\small\begin{verbatim}
+  torch.manual_seed(42)
+  torch.cuda.manual_seed_all(42)
+  torch.backends.cudnn.deterministic = True
+  torch.backends.cudnn.benchmark     = False
+\end{verbatim}}
+Running any script with these settings on the same hardware reproduces the exact results reported.
 
 \subsubsection{Preprocessing Pipeline}
 
@@ -316,13 +327,15 @@ The encoded feature space contains approximately 25 dimensions after one-hot exp
 
 \subsubsection{Imbalance Handling}
 
-Oversampling (SMOTE, ADASYN) is applied \emph{after} the preprocessor and \emph{only} on the training set within each cross-validation fold to prevent information leakage into the validation fold.
-Similarly, class-weight arguments are passed directly to model constructors.
+Oversampling (SMOTE, ADASYN) is applied \emph{after} the preprocessor and \emph{only} on the training fold within each cross-validation split.
+This is enforced by wrapping the entire sequence — imputer $\to$ scaler / encoder $\to$ resampler $\to$ classifier — inside a single \texttt{imblearn.pipeline.Pipeline}.
+Because scikit-learn calls \texttt{fit} on each pipeline stage sequentially and only on the current training fold, \textbf{no information from the validation or test fold ever touches the fitted preprocessor or the synthetic samples}, eliminating both preprocessing leakage and oversampling leakage.
+Class-weight arguments are passed directly to model constructors and require no additional safeguards.
 
 \subsubsection{Cross-Validation}
 
-All hyperparameter decisions and model comparisons use 5-fold Stratified Cross-Validation on the training set, which preserves the minority-class ratio across folds.
-The held-out test set is used only for final evaluation.
+{\tolerance=1500 All hyperparameter selection and experiment comparisons use 5-fold Stratified Cross-Validation on the training set, preserving the minority-class ratio across folds.
+\textbf{The held-out test set is evaluated exactly once} — after the best pipeline is selected — and is never used to inform any modelling decision.}
 
 % ============================================================
 \section{Coding Environment}
@@ -331,27 +344,34 @@ The held-out test set is used only for final evaluation.
 
 \begin{table}[H]
   \centering
-  \caption{Tools, libraries, and frameworks used.}
+  \caption{Tools, libraries, and frameworks used (versions reflect the execution environment).}
   \label{tab:environment}
-  \begin{tabular}{lll}
+  \begin{tabular}{llll}
     \toprule
-    \textbf{Category} & \textbf{Tool / Library} & \textbf{Purpose} \\
+    \textbf{Category} & \textbf{Tool / Library} & \textbf{Version} & \textbf{Purpose} \\
     \midrule
-    Language       & Python 3.x          & Core programming language \\
-    Data           & pandas, NumPy        & Data manipulation and numerical computing \\
-    ML framework   & scikit-learn         & Classical models, pipelines, evaluation \\
-    Imbalance      & imbalanced-learn     & SMOTE, ADASYN, BorderlineSMOTE \\
-    Boosting       & XGBoost              & Gradient-boosted trees \\
-    Deep learning  & PyTorch              & MLP implementation \\
-    HPO            & Optuna               & Bayesian hyperparameter optimisation \\
-    Explainability & SHAP                 & Global and local feature attribution \\
-    Explainability & LIME                 & Local surrogate explanations \\
-    Visualisation  & matplotlib, seaborn  & Figures and plots \\
-    Environment    & Conda / pip          & Package management \\
-    Version ctrl   & Git                  & Code versioning \\
+    Language       & Python          & 3.12.7  & Core programming language \\
+    Data           & pandas          & 2.3.3   & Data manipulation \\
+    Data           & NumPy           & 2.0.2   & Numerical computing \\
+    ML framework   & scikit-learn    & 1.8.0   & Classical models, pipelines, evaluation \\
+    Imbalance      & imbalanced-learn & 0.14.1 & SMOTE, ADASYN, under-sampling \\
+    Boosting       & XGBoost         & 3.2.0   & Gradient-boosted trees \\
+    Deep learning  & PyTorch         & 2.9.1   & MLP implementation \\
+    Explainability & SHAP            & 0.51.0  & Global \& local feature attribution \\
+    Explainability & LIME            & 0.2.0.1 & Local surrogate explanations \\
+    Visualisation  & matplotlib      & 3.10.8  & Figures and plots \\
+    Visualisation  & seaborn         & 0.13.2  & Statistical visualisations \\
+    Version ctrl   & Git / GitHub    & —       & Code versioning (see below) \\
     \bottomrule
   \end{tabular}
 \end{table}
+
+\noindent\textbf{Repository and dataset.}
+The full source code is publicly available at:
+\begin{center}
+  \url{https://github.com/umutcaginozcan/cs464-project}
+\end{center}
+The dataset used is the \textit{Healthcare Dataset Stroke Data} (version 1) published by F.\ Soriano on Kaggle~\cite{fedesoriano2021stroke}.
 
 % ============================================================
 \section{Details of the Trained Models}
@@ -537,12 +557,23 @@ The model hyperparameter search spaces are given in Table~\ref{tab:hpspace}.
   \end{tabular}
 \end{table}
 
+\subsection{Threshold Tuning (Experiment 4)}
+
+The optimal threshold $t^*$ is identified by sweeping over the out-of-fold predicted probabilities produced during 5-fold CV on the training set — \emph{not} on the test set.
+This ensures $t^*$ is selected without any access to held-out labels, preserving the integrity of the final evaluation.
+
 \subsection{Calibration}
 
-We apply two post-hoc calibration methods to the winner model:
+To fit the calibrators without contaminating the test set, the training set is further split into:
 \begin{itemize}
-  \item \textbf{Platt scaling} — fits a logistic regression on the model's raw scores.
-  \item \textbf{Isotonic regression} — a non-parametric monotone function fitted to the scores.
+  \item \textbf{Fit set} ($80\%$ of training, $\approx\!3{,}270$ samples) — used to train the base model.
+  \item \textbf{Calibration set} ($20\%$ of training, $\approx\!818$ samples) — held out and used exclusively to fit the Platt / isotonic calibrator on the base model's raw probability outputs.
+\end{itemize}
+The calibrated model is then evaluated on the original held-out test set.
+We apply two post-hoc calibration methods:
+\begin{itemize}
+  \item \textbf{Platt scaling} — fits a logistic regression on the calibration-set scores.
+  \item \textbf{Isotonic regression} — fits a non-parametric monotone function on the calibration-set scores.
 \end{itemize}
 Calibration quality is measured by the Brier score $\text{BS} = \frac{1}{N}\sum_i(\hat{p}_i - y_i)^2$ and reliability diagrams.
 
@@ -1001,9 +1032,10 @@ J.~Davis and M.~Goadrich.
 
 \bibitem{fedesoriano2021stroke}
 F.~Soriano.
-\newblock Stroke prediction dataset.
+\newblock Stroke prediction dataset (version 1).
 \newblock Kaggle, 2021.
 \newblock \url{https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset}.
+\newblock Accessed: 15 March 2026.
 
 \bibitem{chawla2002smote}
 N.~V. Chawla, K.~W. Bowyer, L.~O. Hall, and W.~P. Kegelmeyer.

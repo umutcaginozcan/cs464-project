@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.2)  5 MAY 2026 08:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.2)  5 MAY 2026 09:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -630,7 +630,7 @@ Package hyperref Info: Link coloring ON on input line 80.
 \@outlinefile=\write3
 \openout3 = `report.out'.
 
-<bilkent_logo.png, id=217, 225.84375pt x 225.84375pt>
+<bilkent_logo.png, id=221, 225.84375pt x 225.84375pt>
 File: bilkent_logo.png Graphic file (type png)
 <use bilkent_logo.png>
 Package pdftex.def Info: bilkent_logo.png  used on input line 87.
@@ -691,7 +691,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.47 ...\numberline {7}Conclusions}{16}{section.7}
+l.48 ...sive Model Comparison}{16}{subsection.6.8}
                                                   % [1
 
 {/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}])
@@ -722,7 +722,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 172--173
 ork_type\T1/lmr/m/n/10.95 (+20) ,
  []
 
-<outputs/figures/01_class_distribution.png, id=294, 1434.35875pt x 1128.215pt>
+<outputs/figures/01_class_distribution.png, id=299, 1434.35875pt x 1128.215pt>
 File: outputs/figures/01_class_distribution.png Graphic file (type png)
 <use outputs/figures/01_class_distribution.png>
 Package pdftex.def Info: outputs/figures/01_class_distribution.png  used on inp
@@ -738,13 +738,13 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 {/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/te
 xlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-<outputs/figures/02_continuous_kde.png, id=311, 4176.60374pt x 1240.635pt>
+<outputs/figures/02_continuous_kde.png, id=316, 4176.60374pt x 1240.635pt>
 File: outputs/figures/02_continuous_kde.png Graphic file (type png)
 <use outputs/figures/02_continuous_kde.png>
 Package pdftex.def Info: outputs/figures/02_continuous_kde.png  used on input l
 ine 197.
 (pdftex.def)             Requested size: 385.59373pt x 114.52977pt.
-<outputs/figures/03_categorical_stroke_rates.png, id=314, 5381.10374pt x 2468.2
+<outputs/figures/03_categorical_stroke_rates.png, id=319, 5381.10374pt x 2468.2
 2125pt>
 File: outputs/figures/03_categorical_stroke_rates.png Graphic file (type png)
 <use outputs/figures/03_categorical_stroke_rates.png>
@@ -754,41 +754,46 @@ on input line 226.
  [4{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./out
 puts/figures/01_class_distribution.png> <./outputs/figures/02_continuous_kde.pn
 g>]
-<outputs/figures/05_correlation_heatmap.png, id=327, 2067.725pt x 1821.80624pt>
+<outputs/figures/05_correlation_heatmap.png, id=332, 2067.725pt x 1821.80624pt>
 
 File: outputs/figures/05_correlation_heatmap.png Graphic file (type png)
 <use outputs/figures/05_correlation_heatmap.png>
 Package pdftex.def Info: outputs/figures/05_correlation_heatmap.png  used on in
 put line 266.
 (pdftex.def)             Requested size: 210.32082pt x 185.30472pt.
-<outputs/figures/04_missing_data_audit.png, id=328, 3574.35374pt x 2365.83875pt
+<outputs/figures/04_missing_data_audit.png, id=333, 3574.35374pt x 2365.83875pt
 >
 File: outputs/figures/04_missing_data_audit.png Graphic file (type png)
 <use outputs/figures/04_missing_data_audit.png>
 Package pdftex.def Info: outputs/figures/04_missing_data_audit.png  used on inp
 ut line 272.
 (pdftex.def)             Requested size: 210.32082pt x 139.20062pt.
- [5 <./outputs/figures/03_categorical_stroke_rates.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 305--307
+ [5 <./outputs/figures/03_categorical_stroke_rates.png>] [6 <./outputs/figures/
+05_correlation_heatmap.png> <./outputs/figures/04_missing_data_audit.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 316--318
 []\T1/lmr/bx/n/10.95 (+20) Categorical block \T1/lmr/m/n/10.95 (+20) (\T1/lmtt/
 m/n/10.95 gender\T1/lmr/m/n/10.95 (+20) , \T1/lmtt/m/n/10.95 ever_married\T1/lm
 r/m/n/10.95 (+20) , \T1/lmtt/m/n/10.95 work_type\T1/lmr/m/n/10.95 (+20) , \T1/l
 mtt/m/n/10.95 Residence_type\T1/lmr/m/n/10.95 (+20) ,
  []
 
-[6 <./outputs/figures/05_correlation_heatmap.png> <./outputs/figures/04_missing
-_data_audit.png>]
+
+Overfull \hbox (1.18639pt too wide) in paragraph at lines 337--339
+\T1/lmr/m/n/10.95 (-20) All hy-per-pa-ram-e-ter se-lec-tion and ex-per-i-ment c
+om-par-isons use 5-fold Strat-i-fied Cross-Validation
+ []
+
+[7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 375.
+(hyperref)                removing `math shift' on input line 395.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 375.
+(hyperref)                removing `math shift' on input line 395.
 
-[7] [8] [9{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}
-]
-Underfull \hbox (badness 10000) in paragraph at lines 533--533
+[8] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 553--553
 []|$\OML/lmm/m/it/10.95 C \OMS/lmsy/m/n/10.95 2 f\OT1/lmr/m/n/10.95 (+20) 0\OML
 /lmm/m/it/10.95 :\OT1/lmr/m/n/10.95 (+20) 1\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/1
 0.95 (+20) 1\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 (+20) 10\OML/lmm/m/it/10.9
@@ -797,7 +802,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 533--533
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 534--534
+Underfull \hbox (badness 10000) in paragraph at lines 554--554
 []|\T1/lmtt/m/n/10.95 n_estimators $\OMS/lmsy/m/n/10.95 2 f\OT1/lmr/m/n/10.95 (
 +20) 100\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 (+20) 200\OML/lmm/m/it/10.95 ;
  \OT1/lmr/m/n/10.95 (+20) 300\OMS/lmsy/m/n/10.95 g$\T1/lmr/m/n/10.95 (+20) ; \T
@@ -805,181 +810,182 @@ Underfull \hbox (badness 10000) in paragraph at lines 534--534
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 535--535
+Underfull \hbox (badness 10000) in paragraph at lines 555--555
 []|\T1/lmtt/m/n/10.95 n_estimators\T1/lmr/m/n/10.95 (+20) , \T1/lmtt/m/n/10.95 
 max_depth\T1/lmr/m/n/10.95 (+20) , \T1/lmtt/m/n/10.95 learning_rate\T1/lmr/m/n/
 10.95 (+20) ,
  []
 
-[10] [11]
-<outputs/figures/dl_mlp_training_history_bce.png, id=398, 2120.92375pt x 1653.1
+[10{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+[11]
+<outputs/figures/dl_mlp_training_history_bce.png, id=405, 2120.92375pt x 1653.1
 7625pt>
 File: outputs/figures/dl_mlp_training_history_bce.png Graphic file (type png)
 <use outputs/figures/dl_mlp_training_history_bce.png>
 Package pdftex.def Info: outputs/figures/dl_mlp_training_history_bce.png  used 
-on input line 640.
+on input line 671.
 (pdftex.def)             Requested size: 140.21832pt x 109.27646pt.
-<outputs/figures/dl_mlp_training_history_weighted.png, id=399, 2090.81125pt x 1
+<outputs/figures/dl_mlp_training_history_weighted.png, id=406, 2090.81125pt x 1
 653.17625pt>
 File: outputs/figures/dl_mlp_training_history_weighted.png Graphic file (type p
 ng)
 <use outputs/figures/dl_mlp_training_history_weighted.png>
 Package pdftex.def Info: outputs/figures/dl_mlp_training_history_weighted.png  
-used on input line 645.
+used on input line 676.
 (pdftex.def)             Requested size: 140.21832pt x 110.86565pt.
-<outputs/figures/dl_mlp_training_history_focal.png, id=400, 2150.0325pt x 1653.
+<outputs/figures/dl_mlp_training_history_focal.png, id=407, 2150.0325pt x 1653.
 17625pt>
 File: outputs/figures/dl_mlp_training_history_focal.png Graphic file (type png)
 
 <use outputs/figures/dl_mlp_training_history_focal.png>
 Package pdftex.def Info: outputs/figures/dl_mlp_training_history_focal.png  use
-d on input line 650.
+d on input line 681.
 (pdftex.def)             Requested size: 140.21832pt x 107.81339pt.
  [12 <./outputs/figures/dl_mlp_training_history_bce.png> <./outputs/figures/dl_
 mlp_training_history_weighted.png> <./outputs/figures/dl_mlp_training_history_f
 ocal.png>]
-<outputs/figures/winner_analysis/roc_pr_curves.png, id=412, 3808.2275pt x 1768.
+<outputs/figures/winner_analysis/roc_pr_curves.png, id=419, 3808.2275pt x 1768.
 6075pt>
 File: outputs/figures/winner_analysis/roc_pr_curves.png Graphic file (type png)
 
 <use outputs/figures/winner_analysis/roc_pr_curves.png>
 Package pdftex.def Info: outputs/figures/winner_analysis/roc_pr_curves.png  use
-d on input line 716.
+d on input line 747.
 (pdftex.def)             Requested size: 210.32082pt x 97.66502pt.
-<outputs/figures/winner_analysis/confusion_matrix.png, id=413, 1895.08pt x 1765
+<outputs/figures/winner_analysis/confusion_matrix.png, id=420, 1895.08pt x 1765
 .59625pt>
 File: outputs/figures/winner_analysis/confusion_matrix.png Graphic file (type p
 ng)
 <use outputs/figures/winner_analysis/confusion_matrix.png>
 Package pdftex.def Info: outputs/figures/winner_analysis/confusion_matrix.png  
-used on input line 722.
+used on input line 753.
 (pdftex.def)             Requested size: 210.32082pt x 195.9404pt.
-<outputs/figures/winner_analysis/threshold_sweep.png, id=415, 2971.1pt x 1767.6
+ [13]
+<outputs/figures/winner_analysis/threshold_sweep.png, id=428, 2971.1pt x 1767.6
 0374pt>
 File: outputs/figures/winner_analysis/threshold_sweep.png Graphic file (type pn
 g)
 <use outputs/figures/winner_analysis/threshold_sweep.png>
 Package pdftex.def Info: outputs/figures/winner_analysis/threshold_sweep.png  u
-sed on input line 736.
+sed on input line 767.
 (pdftex.def)             Requested size: 306.71924pt x 182.4617pt.
- [13 <./outputs/figures/winner_analysis/roc_pr_curves.png> <./outputs/figures/w
-inner_analysis/confusion_matrix.png>]
-<outputs/figures/winner_analysis/calibration_curve.png, id=427, 4020.01875pt x 
+<outputs/figures/winner_analysis/calibration_curve.png, id=431, 4020.01875pt x 
 1767.60374pt>
 File: outputs/figures/winner_analysis/calibration_curve.png Graphic file (type 
 png)
 <use outputs/figures/winner_analysis/calibration_curve.png>
 Package pdftex.def Info: outputs/figures/winner_analysis/calibration_curve.png 
- used on input line 765.
+ used on input line 796.
 (pdftex.def)             Requested size: 210.32082pt x 92.45804pt.
-<outputs/figures/reliability_diagrams.png, id=428, 5832.79124pt x 5028.7875pt>
+<outputs/figures/reliability_diagrams.png, id=432, 5832.79124pt x 5028.7875pt>
 File: outputs/figures/reliability_diagrams.png Graphic file (type png)
 <use outputs/figures/reliability_diagrams.png>
 Package pdftex.def Info: outputs/figures/reliability_diagrams.png  used on inpu
-t line 770.
+t line 801.
 (pdftex.def)             Requested size: 210.32082pt x 181.32013pt.
- [14 <./outputs/figures/winner_analysis/threshold_sweep.png> <./outputs/figures
-/winner_analysis/calibration_curve.png> <./outputs/figures/reliability_diagrams
-.png>]
-<outputs/figures/shap_lime/shap_bar.png, id=439, 1341.01pt x 883.3pt>
+ [14 <./outputs/figures/winner_analysis/roc_pr_curves.png> <./outputs/figures/w
+inner_analysis/confusion_matrix.png> <./outputs/figures/winner_analysis/thresho
+ld_sweep.png>]
+<outputs/figures/shap_lime/shap_bar.png, id=446, 1341.01pt x 883.3pt>
 File: outputs/figures/shap_lime/shap_bar.png Graphic file (type png)
 <use outputs/figures/shap_lime/shap_bar.png>
 Package pdftex.def Info: outputs/figures/shap_lime/shap_bar.png  used on input 
-line 800.
+line 831.
 (pdftex.def)             Requested size: 210.32082pt x 138.52745pt.
-<outputs/figures/shap_lime/shap_beeswarm.png, id=440, 1185.42876pt x 1109.14375
+<outputs/figures/shap_lime/shap_beeswarm.png, id=447, 1185.42876pt x 1109.14375
 pt>
 File: outputs/figures/shap_lime/shap_beeswarm.png Graphic file (type png)
 <use outputs/figures/shap_lime/shap_beeswarm.png>
 Package pdftex.def Info: outputs/figures/shap_lime/shap_beeswarm.png  used on i
-nput line 805.
+nput line 836.
 (pdftex.def)             Requested size: 210.32082pt x 196.77708pt.
- [15 <./outputs/figures/shap_lime/shap_bar.png> <./outputs/figures/shap_lime/sh
-ap_beeswarm.png>]
-<outputs/figures/winner_analysis/lime_true_positive_highest_conf.png, id=453, 2
+ [15 <./outputs/figures/winner_analysis/calibration_curve.png> <./outputs/figur
+es/reliability_diagrams.png> <./outputs/figures/shap_lime/shap_bar.png> <./outp
+uts/figures/shap_lime/shap_beeswarm.png>]
+<outputs/figures/winner_analysis/lime_true_positive_highest_conf.png, id=460, 2
 971.1pt x 1767.60374pt>
 File: outputs/figures/winner_analysis/lime_true_positive_highest_conf.png Graph
 ic file (type png)
 <use outputs/figures/winner_analysis/lime_true_positive_highest_conf.png>
 Package pdftex.def Info: outputs/figures/winner_analysis/lime_true_positive_hig
-hest_conf.png  used on input line 845.
+hest_conf.png  used on input line 876.
 (pdftex.def)             Requested size: 210.32082pt x 125.12044pt.
-<outputs/figures/winner_analysis/lime_false_negative_missed_stroke.png, id=454,
+<outputs/figures/winner_analysis/lime_false_negative_missed_stroke.png, id=461,
  2973.1075pt x 1767.60374pt>
 File: outputs/figures/winner_analysis/lime_false_negative_missed_stroke.png Gra
 phic file (type png)
 <use outputs/figures/winner_analysis/lime_false_negative_missed_stroke.png>
 Package pdftex.def Info: outputs/figures/winner_analysis/lime_false_negative_mi
-ssed_stroke.png  used on input line 850.
+ssed_stroke.png  used on input line 881.
 (pdftex.def)             Requested size: 210.32082pt x 125.03954pt.
-<outputs/figures/master_summary_figure.png, id=456, 5983.35374pt x 3914.625pt>
+<outputs/figures/master_summary_figure.png, id=463, 5983.35374pt x 3914.625pt>
 File: outputs/figures/master_summary_figure.png Graphic file (type png)
 <use outputs/figures/master_summary_figure.png>
 Package pdftex.def Info: outputs/figures/master_summary_figure.png  used on inp
-ut line 863.
+ut line 894.
 (pdftex.def)             Requested size: 403.11768pt x 263.71806pt.
+
 [16 <./outputs/figures/winner_analysis/lime_true_positive_highest_conf.png> <./
-outputs/figures/winner_analysis/lime_false_negative_missed_stroke.png> <./outpu
-ts/figures/master_summary_figure.png>]
-Underfull \hbox (badness 1038) in paragraph at lines 926--927
+outputs/figures/winner_analysis/lime_false_negative_missed_stroke.png>]
+[17 <./outputs/figures/master_summary_figure.png>]
+Underfull \hbox (badness 1038) in paragraph at lines 957--958
 []|\T1/lmr/m/n/10.95 (+20) Exploratory data anal-y-sis (\T1/lmtt/m/n/10.95 01_e
 da.py\T1/lmr/m/n/10.95 (+20) ); sta-tis-ti-cal sig-
  []
 
 
-Underfull \hbox (badness 3965) in paragraph at lines 926--927
+Underfull \hbox (badness 3965) in paragraph at lines 957--958
 \T1/lmr/m/n/10.95 (+20) nif-i-cance test-ing; EDA fig-ures; data san-ity checks
 
  []
 
 
-Underfull \hbox (badness 1028) in paragraph at lines 938--939
+Underfull \hbox (badness 1028) in paragraph at lines 969--970
 []|\T1/lmr/m/n/10.95 (+20) Threshold tun-ing (\T1/lmtt/m/n/10.95 07_exp4_thresh
 old.py\T1/lmr/m/n/10.95 (+20) ); cal-i-bra-tion
  []
 
-[17]
-<outputs/figures/06_pca.png, id=476, 3573.35pt x 1467.4825pt>
+<outputs/figures/06_pca.png, id=484, 3573.35pt x 1467.4825pt>
 File: outputs/figures/06_pca.png Graphic file (type png)
 <use outputs/figures/06_pca.png>
-Package pdftex.def Info: outputs/figures/06_pca.png  used on input line 951.
+Package pdftex.def Info: outputs/figures/06_pca.png  used on input line 982.
 (pdftex.def)             Requested size: 306.71924pt x 125.95471pt.
-<outputs/figures/shap_lime/lime_global_bar.png, id=477, 1334.9875pt x 883.3pt>
+<outputs/figures/shap_lime/lime_global_bar.png, id=485, 1334.9875pt x 883.3pt>
 File: outputs/figures/shap_lime/lime_global_bar.png Graphic file (type png)
 <use outputs/figures/shap_lime/lime_global_bar.png>
 Package pdftex.def Info: outputs/figures/shap_lime/lime_global_bar.png  used on
- input line 958.
+ input line 989.
 (pdftex.def)             Requested size: 210.32082pt x 139.16092pt.
-<outputs/figures/shap_lime/permutation_importance.png, id=478, 1333.98375pt x 8
+<outputs/figures/shap_lime/permutation_importance.png, id=486, 1333.98375pt x 8
 83.3pt>
 File: outputs/figures/shap_lime/permutation_importance.png Graphic file (type p
 ng)
 <use outputs/figures/shap_lime/permutation_importance.png>
 Package pdftex.def Info: outputs/figures/shap_lime/permutation_importance.png  
-used on input line 963.
+used on input line 994.
 (pdftex.def)             Requested size: 210.32082pt x 139.25526pt.
- [18 <./outputs/figures/06_pca.png>]
-<outputs/figures/brier_scores.png, id=487, 8573.02875pt x 1767.60374pt>
+[18 <./outputs/figures/06_pca.png>]
+<outputs/figures/brier_scores.png, id=495, 8573.02875pt x 1767.60374pt>
 File: outputs/figures/brier_scores.png Graphic file (type png)
 <use outputs/figures/brier_scores.png>
-Package pdftex.def Info: outputs/figures/brier_scores.png  used on input line 9
-71.
+Package pdftex.def Info: outputs/figures/brier_scores.png  used on input line 1
+002.
 (pdftex.def)             Requested size: 315.48456pt x 65.0281pt.
-<outputs/figures/winner_analysis/lime_false_positive_false_alarm.png, id=488, 2
+<outputs/figures/winner_analysis/lime_false_positive_false_alarm.png, id=496, 2
 971.1pt x 1767.60374pt>
 File: outputs/figures/winner_analysis/lime_false_positive_false_alarm.png Graph
 ic file (type png)
 <use outputs/figures/winner_analysis/lime_false_positive_false_alarm.png>
 Package pdftex.def Info: outputs/figures/winner_analysis/lime_false_positive_fa
-lse_alarm.png  used on input line 978.
+lse_alarm.png  used on input line 1009.
 (pdftex.def)             Requested size: 210.32082pt x 125.12044pt.
-<outputs/figures/winner_analysis/lime_true_negative_most_confident.png, id=489,
+<outputs/figures/winner_analysis/lime_true_negative_most_confident.png, id=497,
  2973.1075pt x 1767.60374pt>
 File: outputs/figures/winner_analysis/lime_true_negative_most_confident.png Gra
 phic file (type png)
 <use outputs/figures/winner_analysis/lime_true_negative_most_confident.png>
 Package pdftex.def Info: outputs/figures/winner_analysis/lime_true_negative_mos
-t_confident.png  used on input line 983.
+t_confident.png  used on input line 1014.
 (pdftex.def)             Requested size: 210.32082pt x 125.03954pt.
  [19 <./outputs/figures/shap_lime/lime_global_bar.png> <./outputs/figures/shap_
 lime/permutation_importance.png> <./outputs/figures/brier_scores.png> <./output
@@ -990,16 +996,16 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
  ***********
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 6BA11912239B2E12D1040E455DBDA82C;9059.
+(rerunfilecheck)             Checksum: 886B3F0E4C2F7094EDD3E970F0EAA08D;9287.
  ) 
 Here is how much of TeX's memory you used:
- 17304 strings out of 467349
- 282282 string characters out of 5415642
- 754587 words of memory out of 5000000
- 45777 multiletter control sequences out of 15000+600000
- 738754 words of font info for 217 fonts, out of 8000000 for 9000
+ 17334 strings out of 467349
+ 282711 string characters out of 5415642
+ 752675 words of memory out of 5000000
+ 45787 multiletter control sequences out of 15000+600000
+ 739900 words of font info for 227 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,15n,84p,1003b,645s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,15n,84p,1003b,762s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/lo
 cal/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texliv
 e/2026/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2026/texm
@@ -1017,10 +1023,10 @@ usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/t
 exlive/2026/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2026
 /texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2026/texmf-dist
 /fonts/type1/public/lm/lmtt10.pfb>
-Output written on report.pdf (21 pages, 5538395 bytes).
+Output written on report.pdf (21 pages, 5542703 bytes).
 PDF statistics:
- 635 PDF objects out of 1000 (max. 8388607)
- 515 compressed objects within 6 object streams
- 127 named destinations out of 1000 (max. 500000)
- 65574 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 643 PDF objects out of 1000 (max. 8388607)
+ 523 compressed objects within 6 object streams
+ 129 named destinations out of 1000 (max. 500000)
+ 66094 words of extra memory for PDF output out of 74296 (max. 10000000)
 

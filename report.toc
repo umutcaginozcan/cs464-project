@@ -9,45 +9,47 @@
 \contentsline {subsubsection}{\numberline {2.1.6}Feature Correlation and Missing Data}{6}{subsubsection.2.1.6}%
 \contentsline {subsection}{\numberline {2.2}Dataset Preprocessing}{6}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Train / Test Split}{6}{subsubsection.2.2.1}%
+\contentsline {paragraph}{Reproducibility and seeds.}{6}{paragraph*.8}%
 \contentsline {subsubsection}{\numberline {2.2.2}Preprocessing Pipeline}{6}{subsubsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.3}Imbalance Handling}{7}{subsubsection.2.2.3}%
 \contentsline {subsubsection}{\numberline {2.2.4}Cross-Validation}{7}{subsubsection.2.2.4}%
 \contentsline {section}{\numberline {3}Coding Environment}{7}{section.3}%
-\contentsline {section}{\numberline {4}Details of the Trained Models}{7}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Classical Machine Learning Models}{7}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Logistic Regression}{7}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Gaussian Naive Bayes}{7}{subsubsection.4.1.2}%
+\contentsline {section}{\numberline {4}Details of the Trained Models}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Classical Machine Learning Models}{8}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Logistic Regression}{8}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Gaussian Naive Bayes}{8}{subsubsection.4.1.2}%
 \contentsline {subsubsection}{\numberline {4.1.3}$k$-Nearest Neighbours}{8}{subsubsection.4.1.3}%
 \contentsline {subsubsection}{\numberline {4.1.4}Support Vector Machine (RBF Kernel)}{8}{subsubsection.4.1.4}%
 \contentsline {subsubsection}{\numberline {4.1.5}Random Forest}{8}{subsubsection.4.1.5}%
 \contentsline {subsubsection}{\numberline {4.1.6}XGBoost}{8}{subsubsection.4.1.6}%
 \contentsline {subsection}{\numberline {4.2}Deep Learning: PyTorch MLP}{8}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}Architecture}{8}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Loss Functions}{8}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Training Configuration}{8}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.2}Loss Functions}{9}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Training Configuration}{9}{subsubsection.4.2.3}%
 \contentsline {section}{\numberline {5}Experimental Setup}{9}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Experiment 0 — Baseline}{9}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Experiment 1 — Class Weighting}{9}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Experiment 2 — SMOTE}{9}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Experiment 3 — ADASYN}{9}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.3}Experiment 2 — SMOTE}{10}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Experiment 3 — ADASYN}{10}{subsection.5.4}%
 \contentsline {subsection}{\numberline {5.5}Experiment 4 — Threshold Tuning}{10}{subsection.5.5}%
 \contentsline {subsection}{\numberline {5.6}Hyperparameter Search}{10}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}Calibration}{10}{subsection.5.7}%
-\contentsline {section}{\numberline {6}Results \& Discussion}{10}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Baseline Results (Experiment 0)}{10}{subsection.6.1}%
+\contentsline {subsection}{\numberline {5.7}Threshold Tuning (Experiment 4)}{10}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Calibration}{11}{subsection.5.8}%
+\contentsline {section}{\numberline {6}Results \& Discussion}{11}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Baseline Results (Experiment 0)}{11}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Effect of Imbalance Handling (Experiments 1–3)}{11}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Deep Learning Results}{11}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Hyperparameter Search Results}{12}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.3}Deep Learning Results}{12}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Hyperparameter Search Results}{13}{subsection.6.4}%
 \contentsline {subsection}{\numberline {6.5}Winner Model Analysis}{13}{subsection.6.5}%
 \contentsline {subsubsection}{\numberline {6.5.1}Performance Summary}{13}{subsubsection.6.5.1}%
-\contentsline {subsubsection}{\numberline {6.5.2}Threshold Analysis}{13}{subsubsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2}Threshold Analysis}{14}{subsubsection.6.5.2}%
 \contentsline {subsection}{\numberline {6.6}Calibration}{14}{subsection.6.6}%
 \contentsline {subsection}{\numberline {6.7}Feature Importance and Interpretability}{15}{subsection.6.7}%
 \contentsline {subsection}{\numberline {6.8}Comprehensive Model Comparison}{16}{subsection.6.8}%
-\contentsline {section}{\numberline {7}Conclusions}{16}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Key Findings}{16}{subsection.7.1}%
+\contentsline {section}{\numberline {7}Conclusions}{17}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Key Findings}{17}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Methods Learned}{17}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Future Directions}{17}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.3}Future Directions}{18}{subsection.7.3}%
 \contentsline {section}{\numberline {8}Workload Distribution}{18}{section.8}%
 \contentsline {section}{\numberline {A}Additional Figures}{18}{section.A}%
-\contentsline {section}{References}{19}{figure.caption.30}%
+\contentsline {section}{References}{19}{figure.caption.31}%
