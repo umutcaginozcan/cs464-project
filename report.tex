@@ -470,6 +470,40 @@ Three training configurations are compared:
 All experiments follow the same evaluation protocol: metrics are reported for the held-out test set (Table~\ref{tab:exp_summary}).
 For classical models, a 5-fold stratified CV is used to guide model selection, and the test set is evaluated exactly once per configuration.
 
+\subsection{Evaluation Metrics and Averaging Strategy}
+
+This is a \textbf{binary} classification task (stroke\,=\,1 vs.\ no-stroke\,=\,0), so the macro/micro/weighted averaging distinction applies only to threshold-based metrics (Precision, Recall, F1). Table~\ref{tab:metrics_def} lists every metric used, the corresponding sklearn call, and the averaging convention.
+
+\begin{table}[H]
+  \centering
+  \caption{Evaluation metrics, sklearn calls, and averaging conventions.}
+  \label{tab:metrics_def}
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabular}{lp{5.2cm}p{4.8cm}}
+    \toprule
+    \textbf{Metric} & \textbf{sklearn call} & \textbf{Averaging / note} \\
+    \midrule
+    Accuracy   & \texttt{accuracy\_score} & Overall; included only to demonstrate the accuracy paradox \\
+    Precision  & \texttt{precision\_score(…, zero\_division=0)} & \texttt{average=`binary'} — positive class (stroke=1) only \\
+    Recall     & \texttt{recall\_score(…, zero\_division=0)}    & \texttt{average=`binary'} — positive class (stroke=1) only \\
+    F1         & \texttt{f1\_score(…, zero\_division=0)}         & \texttt{average=`binary'} — positive class (stroke=1) only \\
+    AUC-ROC    & \texttt{roc\_auc\_score(y, prob)}               & Binary: single ROC curve; macro/micro distinction does not apply \\
+    AUC-PR     & \texttt{average\_precision\_score(y, prob)}     & Area under the precision-recall curve for the positive class \\
+    Brier score & \texttt{brier\_score\_loss(y, prob)}           & Calibration quality; lower is better \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\noindent\textbf{Why \texttt{average=`binary'} and not macro or weighted?}
+With \texttt{average=`macro'}, the metric is averaged equally over both classes.
+Because the negative class (95\%) is trivially easy to predict, this inflates the reported score and obscures minority-class performance.
+\texttt{average=`binary'} reports Precision, Recall, and F1 \emph{only} for the positive (stroke) class — the clinically critical outcome.
+
+\noindent\textbf{AUC-ROC averaging.}
+For binary classification there is exactly one ROC curve (positive class probability vs.\ threshold), so the macro/micro distinction does not arise.
+\texttt{roc\_auc\_score} computes the standard binary AUC-ROC, which equals the probability that a randomly chosen positive instance is ranked above a randomly chosen negative one (Wilcoxon–Mann–Whitney statistic).
+In a hypothetical one-vs-rest multi-class extension, this would correspond to the macro-averaged OvR AUC.
+
 \begin{table}[H]
   \centering
   \caption{Summary of experimental phases.}
