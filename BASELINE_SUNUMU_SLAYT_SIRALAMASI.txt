@@ -1,0 +1,169 @@
+╔═════════════════════════════════════════════════════════════════════════════╗
+║             BASELINE EXPERIMENT SUNUMU — 6 SLAYT SIRALAMASI                 ║
+║                      Toplam Süre: ~6-7 dakika                              ║
+╚═════════════════════════════════════════════════════════════════════════════╝
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ SLAYT 1: THE IMBALANCE PROBLEM (1-1.5 dakika)                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  📊 GÖRSEL: outputs/figures/01_class_distribution.png                      │
+│             (5110 hastanın 249'u stroke — pie/bar chart)                   │
+│                                                                              │
+│  📝 KONUŞ:                                                                  │
+│     "5110 hastamız var. Stroke olanlar sadece 249 (%5).                   │
+│      Doktor 'herkese stroke yok' derse ne kadar doğru? %95!                │
+│      Ama hiç stroke hastasını yakalamaz. İşte problem."                    │
+│                                                                              │
+│  ✅ VER: İzleyici class imbalance'ı anlar                                  │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ SLAYT 2: EXP-0 NEDIR? (1.5 dakika)                                         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  📐 FORMULA:                                                                │
+│     L = (1/N) Σ ℓ(yᵢ, f(xᵢ))                                              │
+│     "Her örnek eşit ağırlık"                                               │
+│                                                                              │
+│  🔄 DİAGRAM:                                                               │
+│     5110 örnek                                                              │
+│     ├─ 4861 "No" (95%) ← Gradient domineerleniyor ❌                       │
+│     └─ 249 "Yes" (5%) ← Ihmal ediliyor ❌                                  │
+│                                                                              │
+│  📝 KONUŞ:                                                                  │
+│     "Standard ML şöyle çalışır: Her veri noktasını eşit ağırlıkla          │
+│      öğrenirsiniz. Ama veri setinde %95 negatif varsa,                     │
+│      gradient %95 'No' yönünde gider. Model 'her zaman No' öğrenir."      │
+│                                                                              │
+│  ✅ VER: İzleyici neden baseline başarısız olacağını anlayacak             │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ SLAYT 3: TEST SONUÇLARI — ACCURACY PARADOX (1.5 dakika)                    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  📊 TABLO: (outputs/results/exp0_baseline/test_results.csv)               │
+│                                                                              │
+│     Model                Accuracy   Recall   Precision   F1                │
+│     ─────────────────────────────────────────────────────                 │
+│     Logistic Reg         95.21%    0.02% ⚠  100%       0.039             │
+│     Gaussian NB          31.12%    98% ⚠    6.52%      0.122             │
+│     KNN (k=1..9)         91-95%    0-4%     0-18%      0.000-0.066       │
+│     SVM (RBF)            95.11%    0%       0%         0.000             │
+│     Random Forest        95.01%    2%       33.33%     0.038             │
+│     XGBoost              93.84%    4%       11.76%     0.060             │
+│                                                                              │
+│  🎯 VURGULA:                                                               │
+│     ❌ "Logistic Regression: %95 accuracy ama %0.02 recall!"              │
+│     ❌ "Model 5000 stroke hastasından 4999'unu kaçırıyor."               │
+│     ❌ "Gaussian NB: %98 recall ama %6.5 precision — yalan çoğu"         │
+│                                                                              │
+│  📝 KONUŞ:                                                                  │
+│     "Bakın tabloya. Logistic Regression %95 doğruluk veriyor.              │
+│      Ama Recall — yakalanan stroke hastaları — sadece 0.02%.               │
+│      5000 stroke hastasından 4999'unu kaçırıyor!"                          │
+│                                                                              │
+│  ✅ VER: İzleyici Accuracy'nin YANILTICI olduğunu görecek                 │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ SLAYT 4: CONFUSION MATRIX (1 dakika)                                       │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  📊 GÖRSEL: outputs/results/exp0_baseline/confusion_matrices.png           │
+│                                                                              │
+│  🎯 VURGULA (LOGISTIC REGRESSION):                                         │
+│     TP = 1 hastayı doğru buldu                                             │
+│     FN = 49 hastayı KAÇIRDI ← ⚠️ KLİNİK FELAKETİ                        │
+│                                                                              │
+│  📝 KONUŞ:                                                                  │
+│     "Burada Logistic Regression'ın confusion matrix'ini görüyorsünüz.      │
+│      1 hastayı doğru tahmini yaptı. Ama 49 hastayı kaçırdı.               │
+│                                                                              │
+│      Klinik gerçeklik:                                                      │
+│      → False Positive: Sağlığı test yapması gerekiyor, belki aşırı korku   │
+│      → False Negative: İnme yaşıyor, ölüm riski!                           │
+│                                                                              │
+│      FN'in maliyeti sonsuz büyük. İşte neden Recall parasal değil,         │
+│      YAŞAM metriğidir."                                                     │
+│                                                                              │
+│  ✅ VER: İzleyici recall'ın neden önemli olduğunu anlayacak               │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ SLAYT 5: ROC-PR CURVES (1 dakika)                                          │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  📊 GÖRSEL 1: outputs/results/exp0_baseline/roc_curves.png                │
+│  📊 GÖRSEL 2: outputs/results/exp0_baseline/pr_curves.png                 │
+│                                                                              │
+│  📝 PR CURVE AÇIKLAMASI (daha önemli):                                    │
+│     "PR curve'e bakın. AUC-PR = 0.15-0.26 (çok kötü).                     │
+│      Neden PR iyi seçenek? Dengesiz veri için Precision-Recall,           │
+│      Accuracy'ye göre daha güvenilir.                                      │
+│      Çünkü positive class (stroke) odağında."                              │
+│                                                                              │
+│  🎯 KISA POINT:                                                            │
+│     • AUC-ROC = 0.78 (iyi görünüyor)                                       │
+│     • AUC-PR = 0.16 (sahte iyilik açığa çıkıyor)                          │
+│                                                                              │
+│  ✅ VER: İzleyici dengesiz veri için PR'ın neden iyi olduğunu anlayacak   │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ SLAYT 6: SONUÇ & MOTİVASYON (1 dakika)                                     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  📌 4 PROBLEM:                                                              │
+│     1️⃣ ACCURACY MISLEADING: %95 accuracy, %2 recall. Zıt.                 │
+│     2️⃣ STANDARD ERM UYGUNSUZ: Class weight, resampling yok                │
+│     3️⃣ CLINICAL USELESS: Stroke hastalarını kaçırıyor                     │
+│     4️⃣ FN MALIYETI YÜKSEK: Bir FN = potansiyel ölüm                      │
+│                                                                              │
+│  📝 GEÇİŞ CÜMLESI:                                                         │
+│     "Baseline deneyimiz gösteriyor ki class imbalance sadece              │
+│      'rahat' bir problem değil. Standart ML otomatik çözmez.              │
+│      Aktif imbalance handling gerekliyor.                                  │
+│                                                                              │
+│      Sonraki 4 deney bunu test ediyor:                                     │
+│      • Exp-1: Class Weighting (teorik)                                     │
+│      • Exp-2: SMOTE (data augmentation)                                    │
+│      • Exp-3: ADASYN (adaptive sampling)                                   │
+│      • Exp-4: Threshold Tuning (operating point)"                          │
+│                                                                              │
+│  ✅ VER: İzleyici neden Exp-1-4 gerekli olduğunu anlayacak                │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+╔═════════════════════════════════════════════════════════════════════════════╗
+║                            SORU-CEVAP TİPLERİ                              ║
+╚═════════════════════════════════════════════════════════════════════════════╝
+
+❓ "Neden Logistic Regression %100 precision'a sahip?"
+✅ Çünkü sadece 1 hastayı stroke dedi, o da doğru çıktı.
+   Çok az tahmin = yüksek precision ama hiç işe yaramaz.
+
+❓ "Gaussian NB neden böyle aykırı?"
+✅ GaussianNB istatistik temelli; training'de sınıflara posterior probability
+   atamada dengesizliği görmez, her sınıfı eşit sanır.
+
+❓ "Random Forest AUC-ROC'u iyi ama neden seçmiyoruz?"
+✅ ROC misleading dengesiz veri için (TN çok olduğu için).
+   PR'a bakın: 0.16. İşi yaramaz.
+
+❓ "Exp-1,2,3,4 hangi sırayla etkili?"
+✅ Sırayla desen: Exp-2 (SMOTE) > Exp-3 (ADASYN) > Exp-1 (weight) > Exp-4 (tuning)
+   (Ama tam sıra verilerle değişebilir)
+
